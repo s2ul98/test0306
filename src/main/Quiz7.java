@@ -1,46 +1,57 @@
 package main;
 
-import java.util.ArrayList;
-
 public class Quiz7 {
 
 	public static void main(String[] args) {
-		ArrayList<Animal> list = new ArrayList<Animal>();
-
-
-		System.out.println("밤에는 잠을 잡니다");
-		System.out.println("사람이 두 발로 걷습니다");
-		System.out.println("사람이 책을 읽습니다");
+		
+		Human human = new Human();
+		human.sleep();
+		human.move();
+		human.read();
 		
 		System.out.println();
 		
-		System.out.println("밤에는 잠을 잡니다");
-		System.out.println("호랑이가 네 발로 뜁니다");
-		System.out.println("호랑이가 사냥을 합니다");
+		Tiger tiger = new Tiger();
+		tiger.sleep();
+		tiger.move();
+		tiger.hunt();
+		
 			
 
 	}
 
 }
-class Animal {
-	String sleep;
-	String move;
+abstract class Animal {
+	public void sleep() {
+		System.out.println("밤에는 잠을 잡니다");
+	}
+	public abstract void move();
+	
 	
 	
 }
-//class Human implements Animal {
-//
-//	public Human() {
-//		super();
-		// TODO Auto-generated constructor stub
-//	}
-//	
-//}
-//
-//class Tiger implements Animal {
-//
-//	public Tiger() {
-//		super();
-		// TODO Auto-generated constructor stub
-//	}
-	
+class Human extends Animal {
+
+	@Override
+	public void move() {
+		System.out.println("사람이 두 발로 걷습니다");
+	}
+	public void read() {
+		System.out.println("사람이 책을 읽습니다");
+}
+}
+class Tiger extends Animal {
+
+	@Override
+	public void move() {
+		System.out.println("호랑이가 네발로 뜁니다");
+	}
+	public void hunt() {
+			System.out.println("호랑이가 사냥을 합니다");
+	}
+
+}
+
+
+
+

@@ -4,41 +4,49 @@ public class Quiz6 {
 
 	public static void main(String[] args) {
 	
-		Pen pen1 = new 
-		Pen pen2 = new 
+		System.out.println("볼펜의 굵기 : 2");
+		System.out.println("볼펜의 남은양 : 100%");
+		System.out.println("볼펜의 색 : 파랑색");
+		
+		System.out.println();
+		
+		System.out.println("만년필의 굵기 : 2");
+		System.out.println("만년필의 남은양 : 80%");
+		System.out.println("만년필의 브랜드 : 몽블랑");
+		
+		
+
 	
+		Ball ball = new Ball();
+//		ball.t();
+		
+		
 	}
 
 }
-class Pen {
-	int p; // 굵기
-	int y; //양
+abstract class Pen {
+	int t;
+	int y;
 	
-	public Pen(int p, int y) {
+	public Pen(int t, int y) {
 		super();
-		this.p = p;
+		this.t = t;
 		this.y = y;
-		
-		
 	}
-}
-class Ball implements Pen {
-	String c; // 색
-
-	public Ball(String c) {
-		super();
-		this.c = c;
 	
-	}
+	
+	
+	
+}
+class Ball extends Pen {
+	String c;
+
+
 }
 
-class Man implements Pen {
-	String b; // 회사
+class Man extends Pen {
+	String b;
 
-	public Man(String b) {
-		super();
-		this.b = b;
-	}
 	
 	
 }
